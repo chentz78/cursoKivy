@@ -1,0 +1,76 @@
+#:kivy 1.4
+
+<Space@Label>:
+
+<LeftGLab@Label>:
+    size_hint: None, 1
+    width : 50
+    halign: 'left'
+    valign: 'middle'            
+    text_size: self.size   
+            
+BoxLayout:    
+    orientation : 'vertical'    
+    AnchorLayout:
+        canvas:
+            Color:
+                rgba: 0.91, 0.9, 0.9, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                
+        size_hint: 1, 0.2
+        anchor_x : 'center'
+        anchor_y : 'top'
+        Label:
+            text: 'Cadastro de Pessoas'
+            font_size: '22'
+            font_name: 'Lato-Bold.ttf'
+            color: 0.404, 0.522, 0.549, 1.0
+    GridLayout:
+        canvas:
+            Color:
+                rgba: 0.81, 0.8, 0.8, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size                
+        cols: 2
+        rows: 3        
+        spacing : 20
+        padding: 10
+        size_hint: 1, 0.4
+        
+        #Linha 1
+        LeftGLab:
+            text: 'Nome:'            
+        TextInput:            
+        
+        #Linha 2
+        LeftGLab:
+            text: 'Idade:'
+        TextInput:
+        
+        #Linha 3
+        LeftGLab:
+            text: 'CPF:'
+        TextInput:
+        
+    Space:
+        text: 'Espaço para preenchimento'
+    BoxLayout:        
+        canvas:
+            Color:
+                rgba: 0.7, 0.7, 0.7, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                
+        size_hint: 1, 0.15
+        padding : 10
+        spacing : 30
+        Button:
+            text: 'Cadastro'
+            on_press: print("Cadastro")
+        Button:
+            text: 'Voltar'
+            on_press: print("Voltar")
