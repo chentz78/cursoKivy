@@ -1,5 +1,10 @@
 Curso de interface gráfica usando Kivy 1.11
 
+# Requisitos de Software
+
+* Python 3.6.6
+* Kivy 1.11
+
 # Exemplos
 
 ## AppCad01
