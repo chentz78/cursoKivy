@@ -1,0 +1,55 @@
+#:kivy 1.4
+
+<Space@Label>:
+
+#Define um BoxLayout personalizado. Ver definição da classe Main no arquivo py.
+<Main>:    
+    orientation : 'vertical'    
+    AnchorLayout:
+        canvas:
+            Color:
+                rgba: 0.91, 0.9, 0.9, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                
+        size_hint: 1, 0.2
+        anchor_x : 'center'
+        anchor_y : 'top'
+        Label:
+            text: 'Exemplo do uso de tabela'
+            font_size: '22'
+            #font_name: 'Lato-Bold.ttf'
+            color: 0.404, 0.522, 0.549, 1.0
+    CTable:
+        id:tabEx
+        scrollToBotton: True
+        #size_hint: 1.0, None
+        #height: 300
+        
+    Space:
+        text: 'Espaço para preenchimento'
+        
+    BoxLayout:        
+        canvas:
+            Color:
+                rgba: 0.7, 0.7, 0.7, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                
+        #Defini tamanho fixo de 50px para altura
+        size_hint: 1, None
+        height : 50
+        
+        padding : 10
+        spacing : 30
+        Button:
+            id: btnCarga
+            text: 'Carregar'
+            #'root' é o componente principal da App, neste caso um obj da classe Main
+            on_press: root.onBtnCarga()
+        Button:
+            id: btnSair
+            text: 'Sair'
+            on_press: root.onBtnSair()

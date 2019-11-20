@@ -1,0 +1,41 @@
+<BoxLayoutBC>
+    canvas:
+        Color:
+            rgba: (0.3, 0.3, 0.3, 1)
+        Rectangle:
+            size: self.size     
+            pos: self.pos
+            
+<TableHeader>:
+    id: tHead
+    size_hint: 1, None
+    height: 20
+    spacing: 1
+    width: self.minimum_width    
+    
+<TableData>:
+    id: tData
+    scroll_type: ['bars', 'content']
+    scroll_wheel_distance: 114
+    size_hint: 1, 1
+    bar_width: dp(10)
+    viewclass: 'SelectableLabel'    
+    SelectableRecycleGridLayout:
+        id:dGLayout
+        cols: root.nCols
+        cols_minimum: root.colsMin        
+        spacing: 1
+        height: self.minimum_height
+        width: self.minimum_width        
+                
+<SelectableLabel>:
+    canvas.before:
+        Color:
+            rgba: (.0, 0.9, .1, .3) if self.selected else (0, 0, 0, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    size_hint: None, 1
+
+<CTable>:    
+    orientation: 'vertical'
