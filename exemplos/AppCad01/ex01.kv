@@ -8,8 +8,9 @@
     halign: 'left'
     valign: 'middle'            
     text_size: self.size   
-            
-BoxLayout:    
+
+#Define um BoxLayout personalizado. Ver definição da classe Main no arquivo py.
+<Main>:    
     orientation : 'vertical'    
     AnchorLayout:
         canvas:
@@ -25,7 +26,7 @@ BoxLayout:
         Label:
             text: 'Cadastro de Pessoas'
             font_size: '22'
-            font_name: 'Lato-Bold.ttf'
+            #font_name: 'Lato-Bold.ttf'
             color: 0.404, 0.522, 0.549, 1.0
     GridLayout:
         canvas:
@@ -69,8 +70,11 @@ BoxLayout:
         padding : 10
         spacing : 30
         Button:
+            id: btnCad
             text: 'Cadastro'
-            on_press: print("Cadastro")
+            #'root' é o componente principal da App, neste caso um obj da classe Main
+            on_press: root.onBtnCad()
         Button:
-            text: 'Voltar'
-            on_press: print("Voltar")
+            id: btnSair
+            text: 'Sair'
+            on_press: root.onBtnSair()
